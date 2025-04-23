@@ -10,8 +10,8 @@
             color: black;
         }
         body.dark-mode {
-            background-color: black;
-            color: white;
+            background-color: lightgray;
+            color: black;
         }
         .center {
             display: flex;
@@ -19,6 +19,10 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            background-image: url('https://www.vut.cz/logo.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
         }
         button {
             margin: 10px;
@@ -40,9 +44,4 @@
 </head>
 <body class="light-mode">
     <div class="center">
-        <button id="analysisButton" onclick="window.open('https://app.powerbi.com/view?r=eyJrIjoiMDZjMTMwNTMtYmE0OC00ZDYyLTg3ZDEtZWUyMTE2ZmU0ODcxIiwidCI6ImM2M2NlNzI5LWNhMTctNGU1Mi1hYTJkLTk2Yjc5NDg5YTU0MiIsImMiOjh9')">Analýza nehod</button>
-        <button id="backgroundButton" onclick="toggleBackground()">Změna pozadí</button>
-        <button id="languageButton" onclick="changeLanguage()">Přepnout jazyk</button>
-    </div>
-</body>
-</html>
+        <button id="analysisButton" onclick="window.open('https://app.powerbi.com/view?r=eyJrIjoiMDZjMTMwNTMtYmE0OC00ZDYyLTg3ZDEtZWUyMTE2ZmU0ODcxI
