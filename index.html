@@ -1,17 +1,39 @@
-<!DOCTYPE html> 
-<html lang="cs"> 
+<!DOCTYPE html>
+<html lang="cs">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Otevřít Power BI</title> 
-</head> 
-<body>
-	<h1>Otevřít Power BI Dashboard</h1>
-	<p>Kliknutím na tlačítko níže otevřete dashboard:</p>
-	<a href="https://app.powerbi.com/view?r=eyJrIjoiMTYzNWJjZTUtNDM4NC00ZmFjLWFiNDgtMjQyZTkwZTNmMDQ1IiwidCI6ImM2M2NlNzI5LWNhMTctNGU1Mi1hYTJkLTk2Yjc5NDg5YTU0MiIsImMiOjh9" target="_blank">
-		<button>Otevřít 1</button>
-	</a> 
-	<a href="https://app.powerbi.com/view?r=eyJrIjoiMTYzNWJjZTUtNDM4NC00ZmFjLWFiNDgtMjQyZTkwZTNmMDQ1IiwidCI6ImM2M2NlNzI5LWNhMTctNGU1Mi1hYTJkLTk2Yjc5NDg5YTU0MiIsImMiOjh9" target="_blank">
-		<button>Otevřít 2</button>
-	</a> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webová stránka</title>
+    <style>
+        body.light-mode {
+            background-color: white;
+            color: black;
+        }
+        body.dark-mode {
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <script>
+        function toggleBackground() {
+            document.body.classList.toggle('dark-mode');
+            document.body.classList.toggle('light-mode');
+        }
+
+        function changeLanguage() {
+            document.documentElement.lang = document.documentElement.lang === 'cs' ? 'en' : 'cs';
+            document.getElementById('analysisButton').innerText = document.documentElement.lang === 'cs' ? 'Analýza nehod' : 'Accident Analysis';
+            document.getElementById('lightButton').innerText = document.documentElement.lang === 'cs' ? 'Světlé pozadí' : 'Light Background';
+            document.getElementById('darkButton').innerText = document.documentElement.lang === 'cs' ? 'Tmavé pozadí' : 'Dark Background';
+            document.getElementById('languageButton').innerText = document.documentElement.lang === 'cs' ? 'Přepnout jazyk' : 'Switch Language';
+        }
+    </script>
+</head>
+<body class="light-mode">
+    <img src="https://www.vut.cz/logo.png" alt="Logo VUT">
+    <button id="analysisButton" onclick="window.open('https://app.powerbi.com/view?r=eyJrIjoiMDZjMTMwNTMtYmE0OC00ZDYyLTg3ZDEtZWUyMTE2ZmU0ODcxIiwidCI6ImM2M2NlNzI5LWNhMTctNGU1Mi1hYTJkLTk2Yjc5NDg5YTU0MiIsImMiOjh9')">Analýza nehod</button>
+    <button id="lightButton" onclick="toggleBackground()">Světlé pozadí</button>
+    <button id="darkButton" onclick="toggleBackground()">Tmavé pozadí</button>
+    <button id="languageButton" onclick="changeLanguage()">Přepnout jazyk</button>
 </body>
+</html>
